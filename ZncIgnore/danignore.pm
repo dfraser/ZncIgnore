@@ -60,7 +60,6 @@ sub checkIgnores {
     my ($nick, $chan, $msg) = @_;
     foreach $ignore (@ignores) {
 		if (ignore_match($nick,$ignore)) {
-    		ZNC::PutModule("Hey, matched ".$nick." on ".$chan.": ".$msg);
 			return ZNC::HALT;
 		}
     }
